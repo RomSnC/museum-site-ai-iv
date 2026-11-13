@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software and Computer Museum</title>
+  <meta name="description" content="Software and Computer Museum — екскурсії, експонати й курси. Сайт у розробці.">
+  <meta name="robots" content="noindex">
+
+  <!-- Дизайн-система «Software and Computer Museum» v1.0 (ds/scm) -->
+  <link rel="preload" href="ds/scm/fonts/PressStart2P-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="ds/scm/fonts/GolosText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="ds/scm/tokens.css">
+  <link rel="stylesheet" href="ds/scm/components/bundle.css">
+
+  <style>
+    /* Лише токени дизайн-системи: без px і hex у правилах */
+    .stub {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: var(--space-12) 0;
+    }
+    .stub .scm-window { max-width: var(--measure-text); margin: 0 auto; }
+    .stub .scm-window__body { gap: var(--space-6); padding: var(--space-12) var(--space-8); }
+    .stub__list { display: grid; gap: var(--space-6); margin: 0; padding: 0; list-style: none; }
+    .stub__list li { display: flex; flex-direction: column; gap: var(--space-2); }
+    .stub__status { margin: 0; padding-top: var(--space-6); border-top: var(--border-divider) dashed var(--line-soft); }
+    /* Кнопка «Показати більше» під сіткою експонатів */
+    .exhibits__more { display: flex; justify-content: center; margin-top: var(--space-8); }
+  </style>
+</head>
+<body data-base="" data-current="" data-page="home">
+  <!-- Шапка й підвал спільні для всіх сторінок (site.js) -->
+  <div id="site-header" class="scm-root"></div>
+  <main class="scm-root">
+    <div class="stub" data-theme="blue">
+    <div class="scm-container">
+      <div class="scm-window">
+        <div class="scm-window__bar" aria-hidden="true">
+          <span class="scm-window__title">readme.txt</span>
+          <span class="scm-window__ctrls">
+            <span class="scm-window__ctrl scm-window__ctrl--min"></span>
+            <span class="scm-window__ctrl scm-window__ctrl--max"></span>
+            <span class="scm-window__ctrl scm-window__ctrl--x"></span>
+          </span>
+        </div>
+        <div class="scm-window__body">
+          <h1 class="scm-h1">Software and Computer Museum</h1>
+          <p class="scm-lead">Екскурсії, експонати й курси</p>
+          <p class="scm-body">Музей комп'ютерів і програм 80–90-х років. Тут можна побачити техніку, з якої почалася цифрова епоха, послухати її історію й навчитися нового — дітям і дорослим.</p>
+          <ul class="stub__list">
+            <li>
+              <h2 class="scm-h3">Екскурсії</h2>
+              <p class="scm-body">Прогулянки залами з екскурсоводом для шкільних груп, родин і дорослих.</p>
+            </li>
+            <li>
+              <h2 class="scm-h3">Експонати</h2>
+              <p class="scm-small scm-muted">6 експонатів 80–90-х — від дискети 5,25″ до модема</p>
+              <p class="scm-body">Персональний комп'ютер 80-х, дискета 5,25″, ігрова приставка 90-х, матричний принтер, модем та інша справжня техніка.</p>
+            </li>
+            <li>
+              <h2 class="scm-h3">Курси</h2>
+              <p class="scm-body">Заняття для дітей і дорослих: як працює комп'ютер і як упевнено ним користуватися.</p>
+            </li>
+          </ul>
+          <p class="scm-terminal stub__status">
+            <span aria-hidden="true">C:\MUSEUM&gt; </span>Сайт у розробці<span class="scm-cursor" aria-hidden="true"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Експонати: сітка 3×2 і кнопка «Показати більше» (app.js) -->
+    <section id="exhibits" class="scm-section" data-theme="light" aria-labelledby="exhibits-title"></section>
+  </main>
+  <div id="site-footer" class="scm-root"></div>
+
+  <script src="ds/scm/components/lib/react.production.min.js"></script>
+  <script src="ds/scm/components/lib/react-dom.production.min.js"></script>
+  <script src="ds/scm/components/bundle.js"></script>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+  <script src="site.js"></script>
+</body>
+</html>

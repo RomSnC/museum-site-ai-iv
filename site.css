@@ -1,0 +1,47 @@
+/* Стилі сторінок статей. Лише токени дизайн-системи: без px і hex у правилах
+   (виняток — межі в @media, див. ds/scm/docs/README.md → «Лише токени»). */
+
+/* ---------- спільне ---------- */
+.page-intro { display: flex; flex-direction: column; gap: var(--space-4); max-width: var(--measure-title); margin-bottom: var(--space-12); }
+.text-link { color: var(--ink); text-decoration: underline; text-decoration-thickness: var(--underline-s); text-underline-offset: var(--underline-offset-pixel); }
+.text-link:hover { text-decoration-thickness: var(--underline-m); }
+.text-link:focus-visible { outline: var(--border-focus) solid var(--focus); outline-offset: var(--focus-offset); }
+
+/* ---------- список статей ---------- */
+.articles-list { margin: 0; padding: 0; list-style: none; }
+.articles-list > li { display: flex; }
+.articles-list .scm-window { flex: 1; }
+.article-card__meta { margin: 0; font-family: var(--font-mono); font-size: var(--fs-year); line-height: var(--lh-year); color: var(--ink-muted); }
+.article-card__title a { color: var(--ink); text-decoration: none; }
+.article-card__title a:hover { text-decoration: underline; text-decoration-thickness: var(--underline-s); text-underline-offset: var(--underline-offset-pixel); }
+.article-card__title a:focus-visible { outline: var(--border-focus) solid var(--focus); outline-offset: var(--focus-offset); }
+.article-card__foot { margin-top: auto; padding-top: var(--space-2); }
+
+/* ---------- сторінка статті ---------- */
+.article { max-width: var(--measure-text); margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-6); }
+.article__back { align-self: flex-start; display: inline-flex; align-items: center; min-height: var(--tap-min); }
+.article__head { display: flex; flex-direction: column; gap: var(--space-4); padding-bottom: var(--space-6); border-bottom: var(--border-divider) dashed var(--line-soft); }
+.article__meta { margin: 0; font-family: var(--font-mono); font-size: var(--fs-year); line-height: var(--lh-year); color: var(--ink-muted); }
+.article__body { display: flex; flex-direction: column; gap: var(--space-4); }
+.article__body h2 { margin-top: var(--space-8); }
+.article__body ul, .article__body ol { margin: 0; padding-left: var(--space-6); display: flex; flex-direction: column; gap: var(--space-2); }
+.article__body li { font-size: var(--fs-body); line-height: var(--lh-body); }
+.article__body strong { font-weight: 700; }
+
+/* «Цікавий факт», «Уявіть себе…» — вікно в синій темі */
+.article__note { margin: var(--space-4) 0; }
+.article__note .scm-window__body { gap: var(--space-2); }
+
+/* Питання для обговорення та джерела */
+.article__box { margin-top: var(--space-8); }
+.article__box .scm-window__body { gap: var(--space-4); }
+.article__box ol { margin: 0; padding-left: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); }
+.article__sources { margin: 0; padding-left: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); font-size: var(--fs-body-s); line-height: var(--lh-body-s); overflow-wrap: anywhere; }
+
+/* Попередня / наступна стаття */
+.article__pager { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-8); padding-top: var(--space-6); border-top: var(--border-divider) dashed var(--line-soft); }
+
+@media (max-width: 767px) {
+  .page-intro { margin-bottom: var(--space-8); }
+  .article__pager .scm-btn { width: 100%; }
+}

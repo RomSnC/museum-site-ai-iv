@@ -1,0 +1,22 @@
+# Налаштування Claude Code (локальний сервер)
+.claude/
+
+# Робочі документи, не потрібні для сайту
+ТЗ — сторінка Software and Computer Museum v2.docx
+handoff-claude-code-snc-site.md
+plan.md
+content-plan.md
+research-report.md
+
+# Тестова чернетка статті
+articles/test.md
+
+# Системні та тимчасові файли
+Thumbs.db
+desktop.ini
+.DS_Store
+__pycache__/
+*.pyc
+~$*
+.vscode/
+.idea/
